@@ -1,14 +1,59 @@
+import { useSortable } from "@dnd-kit/sortable";
+import TrashIcon from "../icons/TrashIcon";
 import { Column, Id } from "../types";
+import { CSS } from "@dnd-kit/utilities";
 
 interface Props {
   column: Column;
   deleteColumn: (id: Id) => void;
 }
 
-function ColumnContainer(Props: Props) {
-  const { column, deleteColumn } = Props;
+function ColumnContainer({ column, deleteColumn }: Props) {
+  const {
+    setNodeRef,
+    attributes,
+    listeners,
+    transform,
+    transition,
+    isDragging,
+  } = useSortable({
+    id: column.id,
+    data: {
+      type: "Column",
+      column,
+    },
+  });
+
+  const style = {
+    transition,
+    transform: CSS.Transform.toString(transform),
+  };
+
+  if (isDragging) {
+    return (
+      <div
+        ref={setNodeRef}
+        style={style}
+        className="
+    bg-black
+    opacity-40
+    border-2
+    border-rose-500
+    w-[350px]
+    h-[500px]
+    max-h-[500px]
+    rounded-md
+    flex
+    flex-col
+"
+      ></div>
+    );
+  }
+
   return (
     <div
+      ref={setNodeRef}
+      style={style}
       className="
       bg-black
       w-[350px]
@@ -21,6 +66,8 @@ function ColumnContainer(Props: Props) {
     >
       {/* column title */}
       <div
+        {...attributes}
+        {...listeners}
         className="bg-black
       text-md
       h-[60px]
@@ -28,7 +75,7 @@ function ColumnContainer(Props: Props) {
       rounded-md
       p-3
       font-bold
-      border-white
+      border-red-500
       border-4
       flex
       items-center
@@ -52,10 +99,9 @@ function ColumnContainer(Props: Props) {
           </div>
           {column.title}
         </div>
-      </div>
-      <button
-        onClick={() => deleteColumn(column.id)}
-        className="
+        <button
+          onClick={() => deleteColumn(column.id)}
+          className="
       stroke-gray-500
       hover:stroke-white
       hover:bg-amber-400
@@ -63,9 +109,11 @@ function ColumnContainer(Props: Props) {
       px-1
       py-2
       "
-      >
-        Delete
-      </button>
+        >
+          <TrashIcon />
+        </button>
+      </div>
+
       {/* column task container */}
       <div className="flex flex-grow border-white border-4">Content</div>
       {/* column footer */}
