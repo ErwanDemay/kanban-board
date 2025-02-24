@@ -1,50 +1,49 @@
-# React + TypeScript + Vite
+# React-Kanban
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+Ce mini projet est un Kanban Board pour appliquer la méthode Agile. Il est réalisé avec React et DND, ainsi que TailwindCSS. Ce projet permet d'ajouter des colonnes, les renommer, créer des tâches, les supprimer, et les déplacer en fonction de la priorité des colonnes.
 
-Currently, two official plugins are available:
+## Fonctionnalités principales
+- Ajouter des colonnes
+- Renommer des colonnes
+- Créer des tâches
+- Supprimer des tâches
+- Déplacer des tâches selon la priorité des colonnes
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation
+Pour installer et lancer le projet, suivez ces étapes :
 
-## Expanding the ESLint configuration
+1. Clonez le dépôt :
+   ```bash
+   git clone https://github.com/ErwanDemay/kanban-boarf.git
+   ```
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+2. Accédez au répertoire du projet :
+   ```bash
+   cd kanban-boarf
+   ```
 
-- Configure the top-level `parserOptions` property like this:
+3. Installez les dépendances :
+   ```bash
+   npm install
+   ```
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+4. Lancez le projet :
+   ```bash
+   npm run dev
+   ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Utilisation
+Une fois le projet lancé, vous pouvez accéder à l'application Kanban via votre navigateur. Utilisez l'interface pour ajouter, renommer, supprimer et déplacer des colonnes et des tâches selon vos besoins.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Technologies utilisées
+- [Vite.js](https://vitejs.dev/) / [React](https://reactjs.org/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Dnd-kit](https://dndkit.com/)
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Contributeur
+- [Erwan Demay](https://github.com/ErwanDemay)
+
+## Licence
+Ce projet est libre de droits.
