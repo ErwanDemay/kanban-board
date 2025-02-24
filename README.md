@@ -15,12 +15,12 @@ Pour installer et lancer le projet, suivez ces étapes :
 
 1. Clonez le dépôt :
    ```bash
-   git clone https://github.com/ErwanDemay/kanban-boarf.git
+   git clone https://github.com/ErwanDemay/kanban-board.git
    ```
 
 2. Accédez au répertoire du projet :
    ```bash
-   cd kanban-boarf
+   cd kanban-board
    ```
 
 3. Installez les dépendances :
