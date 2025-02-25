@@ -1,5 +1,7 @@
 # React-Kanban
 
+### Currently trying to implement a back-end to create account and stock kanban data into a database. (IN PROGRESS)
+
 ## Description
 Ce mini projet est un Kanban Board pour appliquer la méthode Agile. Il est réalisé avec React et DND, ainsi que TailwindCSS. Ce projet permet d'ajouter des colonnes, les renommer, créer des tâches, les supprimer, et les déplacer en fonction de la priorité des colonnes.
 
